@@ -1,0 +1,8 @@
+configuration:
+    version: 1
+    initial-ban-seconds: 1
+    death-ban-multiplier: 2
+    tempban-command: essentials:tempban %s %ds Deathban
+
+players:
+    3437cf83-c9b0-4709-a686-b8632b8d6172: 0

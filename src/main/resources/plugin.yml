@@ -1,0 +1,10 @@
+name: DeathTempban
+version: ${project.version}
+description: Adds a tempban for each death
+author: crashdemons
+website: https://github.com/crashdemons
+api-version: 1.13
+depend: [ Essentials ]
+softdepend: []
+
+main: com.github.crashdemons.deathtempban.DeathTempbanPlugin
