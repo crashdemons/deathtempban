@@ -35,30 +35,30 @@ public class DeathTempbanPlugin extends JavaPlugin implements Listener {
     
     @EventHandler
     public void onDeath(PlayerDeathEvent event){
-        getLogger().info(" PDE ");
+        //getLogger().info(" PDE ");
         Player p = event.getEntity();
         String playerName = p.getName();
         if(playerName==null) return;//nullable.
         String uuid = p.getUniqueId().toString();
         String key = "players."+uuid;
         
-        getLogger().info("   "+key);
+        //getLogger().info("   "+key);
         
         int firstBanDuration = getConfig().getInt("configuration.initial-ban-seconds");
         int deathbanMultiplier = getConfig().getInt("configuration.death-ban-multiplier");
-        String commandFormat = getConfig().getString("configuration.tempban-command");
+        String commandFormat = getConfig().getString("configurat ion.tempban-command");
         
         
         int deathcount = getConfig().getInt(key);
-        getLogger().info("    "+deathcount);
+        //getLogger().info("    "+deathcount);
         deathcount++;
         getConfig().set(key, deathcount);
         
         double deathMultiplier = Math.pow(deathbanMultiplier, deathcount-1);
         double deathbanDuration = firstBanDuration * deathMultiplier;
         
-        getLogger().info(commandFormat);
-        getLogger().info("    "+String.format(commandFormat, playerName, (int) deathbanDuration));
+        //getLogger().info(commandFormat);
+        //getLogger().info("    "+String.format(commandFormat, playerName, (int) deathbanDuration));
         
        getServer().dispatchCommand(getServer().getConsoleSender(), String.format(commandFormat, playerName, (int) deathbanDuration));
         
