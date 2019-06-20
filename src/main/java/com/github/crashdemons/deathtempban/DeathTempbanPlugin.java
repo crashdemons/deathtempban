@@ -46,7 +46,7 @@ public class DeathTempbanPlugin extends JavaPlugin implements Listener {
         
         int firstBanDuration = getConfig().getInt("configuration.initial-ban-seconds");
         int deathbanMultiplier = getConfig().getInt("configuration.death-ban-multiplier");
-        String commandFormat = getConfig().getString("configurat ion.tempban-command");
+        String commandFormat = getConfig().getString("configuration.tempban-command");
         
         
         int deathcount = getConfig().getInt(key);
