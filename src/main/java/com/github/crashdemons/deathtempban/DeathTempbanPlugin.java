@@ -33,6 +33,7 @@ public class DeathTempbanPlugin extends JavaPlugin implements Listener {
         getLogger().info("Disabled.");
     }
     
+    @EventHandler
     public void onDeath(PlayerDeathEvent event){
         getLogger().info(" PDE ");
         Player p = event.getEntity();
