@@ -26,6 +26,12 @@ public class DeathTempbanPlugin extends JavaPlugin implements Listener {
         getServer().getPluginManager().registerEvents(this, this);
     }
     
+    @Override
+    public void onDisable(){
+        saveConfig();
+        getLogger().info("Disabled.");
+    }
+    
     public void onDeath(PlayerDeathEvent event){
         Player p = event.getEntity();
         String playerName = p.getName();
