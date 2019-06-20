@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package com.github.crashdemons.deathtempban;
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -60,7 +61,16 @@ public class DeathTempbanPlugin extends JavaPlugin implements Listener {
         //getLogger().info(commandFormat);
         //getLogger().info("    "+String.format(commandFormat, playerName, (int) deathbanDuration));
         
-       getServer().dispatchCommand(getServer().getConsoleSender(), String.format(commandFormat, playerName, (int) deathbanDuration));
+        getServer().getScheduler().scheduleSyncDelayedTask(this, new Runnable(){
+            public void run()
+            {
+                getServer().dispatchCommand(getServer().getConsoleSender(), String.format(commandFormat, playerName, (int) deathbanDuration));
+            }
+        }, 20L);
+        
+        
+        
+       
         
         
         
