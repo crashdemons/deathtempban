@@ -61,12 +61,16 @@ public class DeathTempbanPlugin extends JavaPlugin implements Listener {
         //getLogger().info(commandFormat);
         //getLogger().info("    "+String.format(commandFormat, playerName, (int) deathbanDuration));
         
-        getServer().getScheduler().scheduleSyncDelayedTask(this, new Runnable(){
+        
+        
+        
+        getServer().getScheduler().scheduleSyncDelayedTask(this, new Runnable() {
             public void run()
             {
                 getServer().dispatchCommand(getServer().getConsoleSender(), String.format(commandFormat, playerName, (int) deathbanDuration));
             }
         }, 20L);
+        
         
         
         
